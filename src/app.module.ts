@@ -5,6 +5,7 @@ import { LakesController } from './lakes/lakes.controller';
 import { MongooseModule } from '@nestjs/mongoose';
 import { MongoClient, ServerApiVersion } from 'mongodb';
 import { DetailsSchema } from './schema/details.schema';
+import { DetailsService } from './details/details.service';
 /* eslint-disable */
 const env = require('dotenv').config().parsed;
 
@@ -21,6 +22,6 @@ const uri = `mongodb+srv://${env.NODE_JS_MONGO_USER}:${env.NODE_JS_MONGO_PASSWOR
     MongooseModule.forFeature([{ name: 'Details', schema: DetailsSchema }]),
   ],
   controllers: [AppController, LakesController],
-  providers: [AppService],
+  providers: [AppService, DetailsService],
 })
 export class AppModule {}
