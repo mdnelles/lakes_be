@@ -1,5 +1,5 @@
 import { IsNotEmpty, IsNumber, IsString, MaxLength } from 'class-validator';
-export class CreateDetailsDto {
+export class CreateDetailDto {
   @IsNumber()
   @IsNotEmpty()
   readonly id: number;

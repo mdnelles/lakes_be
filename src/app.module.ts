@@ -3,9 +3,9 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { MongoClient, ServerApiVersion } from 'mongodb';
-import { DetailsSchema } from './schema/details.schema';
-import { DetailsService } from './details/details.service';
-import { DetailsController } from './details/details.controller';
+import { DetailSchema } from './schema/detail.schema';
+import { DetailService } from './detail/detail.service';
+import { DetailController } from './detail/detail.controller';
 /* eslint-disable */
 const env = require('dotenv').config().parsed;
 
@@ -19,9 +19,9 @@ const uri = `mongodb+srv://${env.NODE_JS_MONGO_USER}:${env.NODE_JS_MONGO_PASSWOR
       useUnifiedTopology: true,
       serverApi: ServerApiVersion.v1,
     }),
-    MongooseModule.forFeature([{ name: 'Details', schema: DetailsSchema }]),
+    MongooseModule.forFeature([{ name: 'Detail', schema: DetailSchema }]),
   ],
-  controllers: [AppController, DetailsController],
-  providers: [AppService, DetailsService],
+  controllers: [AppController, DetailController],
+  providers: [AppService, DetailService],
 })
 export class AppModule {}

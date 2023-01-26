@@ -1,7 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 
 @Schema()
-export class Details {
+export class Detail {
   @Prop()
   id: number;
 
@@ -110,4 +110,4 @@ export class Details {
   @Prop()
   beenCounted: string;
 }
-export const DetailsSchema = SchemaFactory.createForClass(Details);
+export const DetailSchema = SchemaFactory.createForClass(Detail);

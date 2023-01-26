@@ -1,5 +1,5 @@
 import { Document } from 'mongoose';
-export interface IDetails extends Document {
+export interface IDetail extends Document {
   readonly id: number;
   readonly lName: string;
   readonly lNameAlia: string;
