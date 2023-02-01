@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
-import { MongoClient, ServerApiVersion } from 'mongodb';
+import { ServerApiVersion } from 'mongodb';
 import { DetailSchema } from './schema/detail.schema';
 import { DetailService } from './detail/detail.service';
 import { DetailController } from './detail/detail.controller';
