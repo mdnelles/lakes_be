@@ -6,9 +6,9 @@ import { ServerApiVersion } from 'mongodb';
 import { DetailSchema } from './schema/detail.schema';
 import { DetailService } from './detail/detail.service';
 import { DetailController } from './detail/detail.controller';
+
 /* eslint-disable */
 const env = require('dotenv').config().parsed;
-
 const uri = `mongodb+srv://${env.NODE_JS_MONGO_USER}:${env.NODE_JS_MONGO_PASSWORD}@${env.NODE_JS_MONGO_HOST}/?retryWrites=true&w=majority`;
 
 @Module({
