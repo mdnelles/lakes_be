@@ -1,181 +1,188 @@
-import { IsNotEmpty, IsNumber, IsString, MaxLength } from 'class-validator';
+import {
+  IsNotEmpty,
+  IsNumber,
+  IsString,
+  MaxLength,
+  IsOptional,
+} from 'class-validator';
+
 export class CreateDetailDto {
   @IsNumber()
-  @IsNotEmpty()
+  @IsOptional()
   readonly id: number;
 
   @IsString()
   @MaxLength(30)
-  @IsNotEmpty()
+  @IsOptional()
   readonly lName: string;
 
   @IsString()
   @MaxLength(30)
-  @IsNotEmpty()
+  @IsOptional()
   readonly lNameAlia: string;
 
   @IsString()
   @MaxLength(30)
-  @IsNotEmpty()
+  @IsOptional()
   readonly countrys: string;
 
   @IsString()
   @MaxLength(30)
-  @IsNotEmpty()
+  @IsOptional()
   readonly continent: string;
 
   @IsString()
   @MaxLength(30)
-  @IsNotEmpty()
+  @IsOptional()
   readonly Lat: string;
 
   @IsString()
   @MaxLength(30)
-  @IsNotEmpty()
+  @IsOptional()
   readonly Lon: string;
 
   @IsString()
   @MaxLength(30)
-  @IsNotEmpty()
+  @IsOptional()
   readonly gLat: string;
 
   @IsString()
   @MaxLength(30)
-  @IsNotEmpty()
+  @IsOptional()
   readonly gLon: string;
 
   @IsString()
   @MaxLength(30)
-  @IsNotEmpty()
+  @IsOptional()
   readonly gMapZoom: string;
 
   @IsString()
   @MaxLength(30)
-  @IsNotEmpty()
+  @IsOptional()
   readonly Altitude: string;
 
   @IsString()
   @MaxLength(30)
-  @IsNotEmpty()
+  @IsOptional()
   readonly SurfaceArea: string;
 
   @IsString()
   @MaxLength(30)
-  @IsNotEmpty()
+  @IsOptional()
   readonly maxDepth: string;
 
   @IsString()
   @MaxLength(30)
-  @IsNotEmpty()
+  @IsOptional()
   readonly MeanDepth: string;
 
   @IsString()
   @MaxLength(30)
-  @IsNotEmpty()
+  @IsOptional()
   readonly Volume: string;
 
   @IsString()
   @MaxLength(30)
-  @IsNotEmpty()
+  @IsOptional()
   readonly Shoreline: string;
 
   @IsString()
   @MaxLength(30)
-  @IsNotEmpty()
+  @IsOptional()
   readonly catchmentArea: string;
 
   @IsString()
   @MaxLength(30)
-  @IsNotEmpty()
+  @IsOptional()
   readonly residenceTime: string;
 
   @IsString()
   @MaxLength(30)
-  @IsNotEmpty()
+  @IsOptional()
   readonly frozenPeriods: string;
 
   @IsString()
   @MaxLength(30)
-  @IsNotEmpty()
+  @IsOptional()
   readonly frozenMonths: string;
 
   @IsString()
   @MaxLength(30)
-  @IsNotEmpty()
+  @IsOptional()
   readonly mixingType: string;
 
   @IsString()
   @MaxLength(30)
-  @IsNotEmpty()
+  @IsOptional()
   readonly morphDam: string;
 
   @IsString()
   @MaxLength(30)
-  @IsNotEmpty()
+  @IsOptional()
   readonly relatedInfo: string;
 
   @IsString()
   @MaxLength(30)
-  @IsNotEmpty()
+  @IsOptional()
   readonly ilecCode: string;
 
   @IsString()
   @MaxLength(30)
-  @IsNotEmpty()
+  @IsOptional()
   readonly description: string;
 
   @IsString()
   @MaxLength(30)
-  @IsNotEmpty()
+  @IsOptional()
   readonly gMapsLink: string;
 
   @IsString()
   @MaxLength(30)
-  @IsNotEmpty()
+  @IsOptional()
   readonly img: string;
 
   @IsString()
   @MaxLength(30)
-  @IsNotEmpty()
+  @IsOptional()
   readonly settlements: string;
 
   @IsString()
   @MaxLength(30)
-  @IsNotEmpty()
+  @IsOptional()
   readonly age: string;
 
   @IsString()
   @MaxLength(30)
-  @IsNotEmpty()
+  @IsOptional()
   readonly origin: string;
 
   @IsString()
   @MaxLength(30)
-  @IsNotEmpty()
+  @IsOptional()
   readonly fishSpecies: string;
 
   @IsString()
   @MaxLength(30)
-  @IsNotEmpty()
+  @IsOptional()
   readonly other1: string;
 
   @IsString()
   @MaxLength(30)
-  @IsNotEmpty()
+  @IsOptional()
   readonly lakeID: string;
 
   @IsString()
   @MaxLength(30)
-  @IsNotEmpty()
+  @IsOptional()
   readonly other3: string;
 
   @IsString()
   @MaxLength(30)
-  @IsNotEmpty()
+  @IsOptional()
   readonly other4: string;
 
   @IsString()
   @MaxLength(30)
-  @IsNotEmpty()
+  @IsOptional()
   readonly beenCounted: string;
 }

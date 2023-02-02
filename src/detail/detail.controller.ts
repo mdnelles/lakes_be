@@ -15,6 +15,7 @@ import { DetailService } from 'src/detail/detail.service';
 @Controller('detail')
 export class DetailController {
   constructor(private readonly detailService: DetailService) {}
+  // create
   @Post()
   async createDetail(
     @Res() response,
@@ -27,6 +28,7 @@ export class DetailController {
         newDetail,
       });
     } catch (err) {
+      console.log(err);
       return response.status(HttpStatus.BAD_REQUEST).json({
         statusCode: 400,
         message: 'Error: Detail not created!',
@@ -34,6 +36,8 @@ export class DetailController {
       });
     }
   }
+
+  // update
   @Put('/:id')
   async updateDetail(
     @Res() response,

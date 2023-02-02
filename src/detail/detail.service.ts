@@ -7,10 +7,12 @@ import { UpdateDetailDto } from 'src/dto/update-detail.dto';
 @Injectable()
 export class DetailService {
   constructor(@InjectModel('Detail') private detailModel: Model<IDetail>) {}
+
   async createDetail(createDetailDto: CreateDetailDto): Promise<IDetail> {
     const newDetail = await new this.detailModel(createDetailDto);
     return newDetail.save();
   }
+
   async updateDetail(
     detailId: string,
     updateDetailDto: UpdateDetailDto,
@@ -32,6 +34,7 @@ export class DetailService {
     }
     return detailData;
   }
+
   async getDetail(detailId: string): Promise<IDetail> {
     const existingDetail = await this.detailModel.findById(detailId).exec();
     if (!existingDetail) {
@@ -39,6 +42,7 @@ export class DetailService {
     }
     return existingDetail;
   }
+
   async deleteDetail(detailId: string): Promise<IDetail> {
     const deletedDetail = await this.detailModel.findByIdAndDelete(detailId);
     if (!deletedDetail) {
