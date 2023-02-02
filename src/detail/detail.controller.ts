@@ -9,8 +9,8 @@ import {
   Put,
   Res,
 } from '@nestjs/common';
-import { CreateDetailDto } from 'src/dto/create-detail.dto';
-import { UpdateDetailDto } from 'src/dto/update-detail.dto';
+import { CreateDetailDto } from 'src/detail/dto/create-detail.dto';
+import { UpdateDetailDto } from 'src/detail/dto/update-detail.dto';
 import { DetailService } from 'src/detail/detail.service';
 @Controller('detail')
 export class DetailController {

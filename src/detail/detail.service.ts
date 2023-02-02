@@ -1,9 +1,9 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { CreateDetailDto } from 'src/dto/create-detail.dto';
-import { IDetail } from 'src/interface/detail.interface';
+import { CreateDetailDto } from 'src/detail/dto/create-detail.dto';
+import { UpdateDetailDto } from 'src/detail/dto/update-detail.dto';
+import { IDetail } from 'src/detail/interface/detail.interface';
 import { Model } from 'mongoose';
-import { UpdateDetailDto } from 'src/dto/update-detail.dto';
 @Injectable()
 export class DetailService {
   constructor(@InjectModel('Detail') private detailModel: Model<IDetail>) {}

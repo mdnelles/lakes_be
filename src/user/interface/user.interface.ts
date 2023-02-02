@@ -1,5 +1,5 @@
 import { Document } from 'mongoose';
-export interface IDetails extends Document {
+export interface IUser extends Document {
   readonly id: number;
   readonly email: string;
   readonly firstName: string;

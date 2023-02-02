@@ -1,7 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 
 @Schema()
-export class Details {
+export class User {
   @Prop()
   id: number;
 
@@ -20,4 +20,4 @@ export class Details {
   @Prop()
   logs: string[];
 }
-export const DetailsSchema = SchemaFactory.createForClass(Details);
+export const UserSchema = SchemaFactory.createForClass(User);
