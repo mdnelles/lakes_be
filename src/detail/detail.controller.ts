@@ -37,7 +37,7 @@ export class DetailController {
     }
   }
 
-  // update
+  // update ie: PUT detail/63dad7eec7f6274d91e30376
   @Put('/:id')
   async updateDetail(
     @Res() response,
@@ -69,6 +69,8 @@ export class DetailController {
       return response.status(err.status).json(err.response);
     }
   }
+
+  //detail/63dad7eec7f6274d91e30376
   @Get('/:id')
   async getDetail(@Res() response, @Param('id') detailId: string) {
     try {
@@ -81,6 +83,7 @@ export class DetailController {
       return response.status(err.status).json(err.response);
     }
   }
+  // /detail/63dad7eec7f6274d91e30376
   @Delete('/:id')
   async deleteDetail(@Res() response, @Param('id') detailId: string) {
     try {

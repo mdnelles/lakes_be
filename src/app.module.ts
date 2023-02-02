@@ -6,6 +6,8 @@ import { ServerApiVersion } from 'mongodb';
 import { DetailSchema } from './schema/detail.schema';
 import { DetailService } from './detail/detail.service';
 import { DetailController } from './detail/detail.controller';
+import { AuthModule } from './auth/auth.module';
+import { UsersModule } from './users/users.module';
 
 /* eslint-disable */
 const env = require('dotenv').config().parsed;
@@ -20,6 +22,8 @@ const uri = `mongodb+srv://${env.NODE_JS_MONGO_USER}:${env.NODE_JS_MONGO_PASSWOR
       serverApi: ServerApiVersion.v1,
     }),
     MongooseModule.forFeature([{ name: 'Detail', schema: DetailSchema }]),
+    AuthModule,
+    UsersModule,
   ],
   controllers: [AppController, DetailController],
   providers: [AppService, DetailService],
