@@ -9,9 +9,9 @@ import {
   Put,
   Res,
 } from '@nestjs/common';
-import { CreateDetailDto } from 'src/detail/dto/create-detail.dto';
-import { UpdateDetailDto } from 'src/detail/dto/update-detail.dto';
-import { DetailService } from 'src/detail/detail.service';
+import { CreateDetailDto } from 'src/api/detail/dto/create-detail.dto';
+import { UpdateDetailDto } from 'src/api/detail/dto/update-detail.dto';
+import { DetailService } from 'src/api/detail/detail.service';
 @Controller('detail')
 export class DetailController {
   constructor(private readonly detailService: DetailService) {}

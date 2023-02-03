@@ -1,19 +1,20 @@
-import { Module } from '@nestjs/common';
+import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ServerApiVersion } from 'mongodb';
 
 import { DetailSchema } from './schema/detail.schema';
-import { DetailService } from './detail/detail.service';
-import { DetailController } from './detail/detail.controller';
+import { DetailService } from './api/detail/detail.service';
+import { DetailController } from './api/detail/detail.controller';
 
 import { UserSchema } from './schema/user.schema';
-import { UserService } from './user/user.service';
-import { UserController } from './user/user.controller';
+import { UserService } from './api/user/user.service';
+import { UserController } from './api/user/user.controller';
 
 import { AuthModule } from './auth/auth.module';
-import { UserModule } from './user/user.module';
+import { UserModule } from './api/user/user.module';
+import { LoggerMiddleware } from './utils/logger.middleware';
 
 /* eslint-disable */
 const env = require('dotenv').config().parsed;
@@ -37,4 +38,9 @@ const uri = `mongodb+srv://${env.NODE_JS_MONGO_USER}:${env.NODE_JS_MONGO_PASSWOR
   controllers: [AppController, DetailController, UserController],
   providers: [AppService, DetailService, UserService],
 })
-export class AppModule {}
+export class AppModule implements NestModule {
+  configure(consumer: MiddlewareConsumer) {
+    consumer.apply(LoggerMiddleware).forRoutes('user', 'detail');
+  }
+}
+//export class AppModule {}
