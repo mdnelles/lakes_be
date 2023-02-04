@@ -13,9 +13,11 @@ import { UserService } from './api/user/user.service';
 import { UserController } from './api/user/user.controller';
 
 import { AuthModule } from './auth/auth.module';
-import { UserModule } from './api/user/user.module';
+//import { UserModule } from './api/user/user.module';
 import { LoggerMiddleware } from './utils/logger.middleware';
-
+import { TestModule } from './test/test.module';
+import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
+import { GraphQLModule } from '@nestjs/graphql';
 /* eslint-disable */
 const env = require('dotenv').config().parsed;
 const uri = `mongodb+srv://${env.NODE_JS_MONGO_USER}:${env.NODE_JS_MONGO_PASSWORD}@${env.NODE_JS_MONGO_HOST}/?retryWrites=true&w=majority`;
@@ -32,8 +34,9 @@ const uri = `mongodb+srv://${env.NODE_JS_MONGO_USER}:${env.NODE_JS_MONGO_PASSWOR
       { name: 'Detail', schema: DetailSchema },
       { name: 'User', schema: UserSchema },
     ]),
+    GraphQLModule.forRoot<ApolloDriverConfig>({ driver: ApolloDriver }),
     AuthModule,
-    UserModule,
+    TestModule,
   ],
   controllers: [AppController, DetailController, UserController],
   providers: [AppService, DetailService, UserService],

@@ -4,6 +4,7 @@ import { CreateDetailDto } from 'src/api/detail/dto/create-detail.dto';
 import { UpdateDetailDto } from 'src/api/detail/dto/update-detail.dto';
 import { IDetail } from 'src/api/detail/interface/detail.interface';
 import { Model } from 'mongoose';
+
 @Injectable()
 export class DetailService {
   constructor(@InjectModel('Detail') private detailModel: Model<IDetail>) {}

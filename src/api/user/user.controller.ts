@@ -69,6 +69,28 @@ export class UserController {
     }
   }
 
+  @Get('/:email/:action')
+  async getUserByEmail(
+    @Res() response,
+    @Param('email') email: string,
+    @Param('action') action: string,
+  ) {
+    try {
+      //const existingUser = await this.userService.getUser(userId);
+      const existingUser = await this.userService.getUserByEmail(email);
+      return response.status(HttpStatus.OK).json({
+        message: 'User data found successfully',
+        existingUser,
+      });
+    } catch (err) {
+      console.log('\n==========');
+      console.log(err);
+
+      console.log('\n==========\n');
+      return response.status(err.status).json(err.response);
+    }
+  }
+
   //user/63dad7eec7f6274d91e30376
   @Get('/:id')
   async getUser(@Res() response, @Param('id') userId: string) {
