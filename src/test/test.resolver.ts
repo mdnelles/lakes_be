@@ -1,7 +1,7 @@
 import { Resolver, Query, Mutation, Args, Int } from '@nestjs/graphql';
 import { TestService } from './test.service';
 import { Test } from './entities/test.entity';
-import { CreateTestInput } from './dto/create-test.input';
+import { CreateTestDto } from './dto/create-test.input';
 import { UpdateTestInput } from './dto/update-test.input';
 
 @Resolver(() => Test)
@@ -9,7 +9,7 @@ export class TestResolver {
   constructor(private readonly testService: TestService) {}
 
   @Mutation(() => Test)
-  createTest(@Args('createTestInput') createTestInput: CreateTestInput) {
+  createTest(@Args('createTestInput') createTestInput: CreateTestDto) {
     return this.testService.create(createTestInput);
   }
 

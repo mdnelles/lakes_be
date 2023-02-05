@@ -1,10 +1,14 @@
 import { Injectable } from '@nestjs/common';
-import { CreateTestInput } from './dto/create-test.input';
+import { CreateTestDto } from './dto/create-test.input';
 import { UpdateTestInput } from './dto/update-test.input';
+import { ITest } from './interface/test.interface';
+import { InjectModel } from '@nestjs/mongoose';
+import { Model } from 'mongoose';
 
 @Injectable()
 export class TestService {
-  create(createTestInput: CreateTestInput) {
+  constructor(@InjectModel('Test') private detailModel: Model<ITest>) {}
+  create(createTestInput: CreateTestDto) {
     return 'This action adds a new test';
   }
 

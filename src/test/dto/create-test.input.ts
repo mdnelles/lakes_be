@@ -1,7 +1,18 @@
-import { InputType, Int, Field } from '@nestjs/graphql';
+import {
+  IsNotEmpty,
+  IsNumber,
+  IsString,
+  IsOptional,
+  MaxLength,
+} from 'class-validator';
+export class CreateTestDto {
+  @IsString()
+  @MaxLength(30)
+  @IsOptional()
+  readonly name: string;
 
-@InputType()
-export class CreateTestInput {
-  @Field(() => Int, { description: 'Example field (placeholder)' })
-  exampleField: number;
+  @IsString()
+  @MaxLength(30)
+  @IsOptional()
+  readonly phone: string;
 }
